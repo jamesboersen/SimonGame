@@ -12,9 +12,21 @@ namespace SimonGame
 {
     public partial class Form1 : Form
     {
+        //Creating a global list to hold pattern of computer
+        public static List<string> Pattern = new List<string>();
+
+        //Creating a global int to keep track of user pattern
+        public static int guess;
+
         public Form1()
         {
             InitializeComponent();
+
+            Form f = this.FindForm();
+            f.Controls.Remove(this);
+
+            MainScreen ms = new MainScreen();
+            f.Controls.Add(ms);
         }
     }
 }
