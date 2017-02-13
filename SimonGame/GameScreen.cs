@@ -22,7 +22,7 @@ namespace SimonGame
             //Refreshes the page
             Refresh();
 
-            //Pause the program for a bit
+            //Pause the program for a bit 
             
 
                
