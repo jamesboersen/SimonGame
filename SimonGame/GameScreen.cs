@@ -24,46 +24,67 @@ namespace SimonGame
             Refresh();
 
             //Pause the program for a bit 
-            Thread.Sleep(1000);    
-               
+            Thread.Sleep(1000);          
         }
+        //Increasing difficulty
+        int progress = 1;
         //Automates computers turn
         private void ComputerTurn()
         {
             //Random Number generator
             Random rnd = new Random();
-            int rndnumber = rnd.Next(1, 4);
 
-            //adding colors to list
-            Form1.Pattern.Add(1);
-            Form1.Pattern.Add(2);
-            Form1.Pattern.Add(3);
-            Form1.Pattern.Add(4);
+
+            for (int i = 0; i < 4; i++)
+            {
+                Form1.Pattern.Add(rnd.Next(1, 5));
+            }
 
             //going through the list and outputing with different colors
-            for (int i = 0; i <= 4; i++)
+            for (int i = 0; i < progress; i++)
             {                
-                if (i == 1)
+                if (Form1.Pattern[i] == 1)
                 {
-                    greenButton.BackColor = Color.LimeGreen;
+                    greenButton.BackColor = Color.Gray;
+                    Refresh();
+                    Thread.Sleep(500);
+                    greenButton.BackColor = Color.Green;
+                    Refresh();
                     Thread.Sleep(500);
                 }
-                if (i == 2)
+                if (Form1.Pattern[i] == 2)
                 {
-                    redButton.BackColor = Color.Crimson;
+                    redButton.BackColor = Color.Gray;
+                    Refresh();
+                    Thread.Sleep(500);
+                    redButton.BackColor = Color.Red;
+                    Refresh();
                     Thread.Sleep(500);
                 }            
-                if (i == 3)
+                if (Form1.Pattern[i] == 3)
                 {
-                    blueButton.BackColor = Color.LightBlue;
+                    blueButton.BackColor = Color.Gray;
+                    Refresh();
+                    Thread.Sleep(500);
+                    blueButton.BackColor = Color.Blue;
+                    Refresh();
                     Thread.Sleep(500);
                 } 
-                if (i == 4)
+                if (Form1.Pattern[i] == 4)
                 {
-                    yellowButton.BackColor = Color.LightYellow;
+                    yellowButton.BackColor = Color.Gray;
+                    Refresh();
+                    Thread.Sleep(500);
+                    yellowButton.BackColor = Color.Yellow;
+                    Refresh();
                     Thread.Sleep(500);
                 }
             }
+        }
+
+        private void GameScreen_Load(object sender, EventArgs e)
+        {
+            ComputerTurn();
         }
     }
 }
