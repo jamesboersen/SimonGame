@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Media;
 
 namespace SimonGame
 {
@@ -42,7 +43,8 @@ namespace SimonGame
 
             //going through the list and outputing with different colors
             for (int i = 0; i < progress; i++)
-            {                
+            {      
+                //If Pattern is 1 then flash green          
                 if (Form1.Pattern[i] == 1)
                 {
                     greenButton.BackColor = Color.Gray;
@@ -52,6 +54,7 @@ namespace SimonGame
                     Refresh();
                     Thread.Sleep(500);
                 }
+                //If Pattern is 2 then flash Red
                 if (Form1.Pattern[i] == 2)
                 {
                     redButton.BackColor = Color.Gray;
@@ -61,6 +64,7 @@ namespace SimonGame
                     Refresh();
                     Thread.Sleep(500);
                 }            
+                //If Pattern is 3 then flash blue
                 if (Form1.Pattern[i] == 3)
                 {
                     blueButton.BackColor = Color.Gray;
@@ -70,6 +74,7 @@ namespace SimonGame
                     Refresh();
                     Thread.Sleep(500);
                 } 
+                //If Pattern is 4 then flash yellow
                 if (Form1.Pattern[i] == 4)
                 {
                     yellowButton.BackColor = Color.Gray;
@@ -84,7 +89,15 @@ namespace SimonGame
 
         private void GameScreen_Load(object sender, EventArgs e)
         {
+            //Plays ComputerTurn
             ComputerTurn();
+
+            //Adding Sounds to Array
+            Form1.player[0] = new SoundPlayer(SimonGame.Properties.Resources.green);
+            Form1.player[1] = new SoundPlayer(SimonGame.Properties.Resources.red);
+            Form1.player[2] = new SoundPlayer(SimonGame.Properties.Resources.blue);
+            Form1.player[3] = new SoundPlayer(SimonGame.Properties.Resources.yellow);
+            Form1.player[4] = new SoundPlayer(SimonGame.Properties.Resources.mistake);
         }
     }
 }

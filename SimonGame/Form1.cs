@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace SimonGame
 {
@@ -17,6 +18,10 @@ namespace SimonGame
 
         //Creating a global int to keep track of user pattern
         public static int guess;
+
+        //Array for sounds
+        public static SoundPlayer[] player = new SoundPlayer[5];
+
 
         public Form1()
         {
