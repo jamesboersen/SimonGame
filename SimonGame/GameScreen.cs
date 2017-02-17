@@ -26,24 +26,26 @@ namespace SimonGame
             Refresh();
 
             //Pause the program for a bit 
-            Thread.Sleep(1000);          
+            Thread.Sleep(1000);        
         }
 
         private void GameScreen_Load(object sender, EventArgs e)
         {
-            //Plays ComputerTurn
-            ComputerTurn();
-
             //Adding Sounds to Array
             Form1.player[0] = new SoundPlayer(SimonGame.Properties.Resources.green);
             Form1.player[1] = new SoundPlayer(SimonGame.Properties.Resources.red);
             Form1.player[2] = new SoundPlayer(SimonGame.Properties.Resources.blue);
             Form1.player[3] = new SoundPlayer(SimonGame.Properties.Resources.yellow);
             Form1.player[4] = new SoundPlayer(SimonGame.Properties.Resources.mistake);
+
+            //Plays ComputerTurn
+            ComputerTurn();
+
+            
         }
 
         //Increasing difficulty
-        int progress = 1;
+        int progress = 0;
 
         //Automates computers turn
         private void ComputerTurn()
@@ -58,9 +60,9 @@ namespace SimonGame
             }
 
             //going through the list and outputing with different colors
-            for (int i = 0; i < progress; i++)
+            for (int i = 0; i < Form1.Pattern.Count(); i++)
             {      
-                //If Pattern is 1 then flash green          
+                //If Pattern is 1 then flash green and play sound         
                 if (Form1.Pattern[i] == 1)
                 {
                     greenButton.BackColor = Color.Gray;
@@ -72,7 +74,7 @@ namespace SimonGame
                     Refresh();
                     Thread.Sleep(500);
                 }
-                //If Pattern is 2 then flash Red
+                //If Pattern is 2 then flash Red and play sound
                 if (Form1.Pattern[i] == 2)
                 {
                     redButton.BackColor = Color.Gray;
@@ -84,7 +86,7 @@ namespace SimonGame
                     Refresh();
                     Thread.Sleep(500);
                 }            
-                //If Pattern is 3 then flash blue
+                //If Pattern is 3 then flash blue and play sound
                 if (Form1.Pattern[i] == 3)
                 {
                     blueButton.BackColor = Color.Gray;
@@ -96,7 +98,7 @@ namespace SimonGame
                     Refresh();
                     Thread.Sleep(500);
                 } 
-                //If Pattern is 4 then flash yellow
+                //If Pattern is 4 then flash yellow and play sound
                 if (Form1.Pattern[i] == 4)
                 {
                     yellowButton.BackColor = Color.Gray;
@@ -108,7 +110,72 @@ namespace SimonGame
                     Refresh();
                     Thread.Sleep(500);
                 }
+                Form1.guess.Clear();
             }
+        }
+
+        private void greenButton_Click(object sender, EventArgs e)
+        {
+            if (Form1.guess[progress] == 1)
+            {
+                greenButton.BackColor = Color.Gray;
+                Refresh();
+                Thread.Sleep(500);
+                Form1.player[0].Play();
+                greenButton.BackColor = Color.Green;
+                Refresh();
+                Thread.Sleep(500);
+                progress++;
+                
+                if (progress = )
+                {
+
+                }
+            }
+        }
+
+        private void redButton_Click(object sender, EventArgs e)
+        {
+            if (Form1.guess[progress] == 2)
+            {
+                redButton.BackColor = Color.Gray;
+                Refresh();
+                Thread.Sleep(500);
+                Form1.player[1].Play();
+                redButton.BackColor = Color.Red;
+                Refresh();
+                Thread.Sleep(500);
+                progress++;
+            }
+        }
+
+        private void blueButton_Click(object sender, EventArgs e)
+        {
+            if (Form1.guess[progress] == 3)
+            {
+                blueButton.BackColor = Color.Gray;
+                Refresh();
+                Thread.Sleep(500);
+                Form1.player[2].Play();
+                blueButton.BackColor = Color.Blue;
+                Refresh();   
+                Thread.Sleep(500);
+                progress++;
+            }
+                
+        }
+
+        private void yellowButton_Click(object sender, EventArgs e)
+        {
+            if (Form1.guess[progress] == 4)
+            yellowButton.BackColor = Color.Gray;
+            Refresh();
+            Thread.Sleep(500);
+            Form1.player[3].Play();
+            yellowButton.BackColor = Color.Yellow;
+            Refresh();
+            Thread.Sleep(500);
+            progress++;
         }
     }
 }

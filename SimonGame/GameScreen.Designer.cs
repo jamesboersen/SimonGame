@@ -43,6 +43,7 @@
             this.greenButton.TabIndex = 0;
             this.greenButton.Text = "Green";
             this.greenButton.UseVisualStyleBackColor = false;
+            this.greenButton.Click += new System.EventHandler(this.greenButton_Click);
             // 
             // redButton
             // 
@@ -53,6 +54,7 @@
             this.redButton.TabIndex = 1;
             this.redButton.Text = "Red";
             this.redButton.UseVisualStyleBackColor = false;
+            this.redButton.Click += new System.EventHandler(this.redButton_Click);
             // 
             // blueButton
             // 
@@ -63,6 +65,7 @@
             this.blueButton.TabIndex = 2;
             this.blueButton.Text = "Blue";
             this.blueButton.UseVisualStyleBackColor = false;
+            this.blueButton.Click += new System.EventHandler(this.blueButton_Click);
             // 
             // yellowButton
             // 
@@ -73,6 +76,7 @@
             this.yellowButton.TabIndex = 3;
             this.yellowButton.Text = "Yellow";
             this.yellowButton.UseVisualStyleBackColor = false;
+            this.yellowButton.Click += new System.EventHandler(this.yellowButton_Click);
             // 
             // GameScreen
             // 

@@ -17,7 +17,7 @@ namespace SimonGame
         public static List<int> Pattern = new List<int>();
 
         //Creating a global int to keep track of user pattern
-        public static int guess;
+        public static List<int> guess = new List<int>();
 
         //Array for sounds
         public static SoundPlayer[] player = new SoundPlayer[5];
