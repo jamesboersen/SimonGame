@@ -1,4 +1,8 @@
-﻿using System;
+﻿//James Boersen
+//Simon Game
+//February 17 2017
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
