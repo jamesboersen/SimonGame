@@ -111,6 +111,7 @@ namespace SimonGame
                     Thread.Sleep(500);
                 }
                 Form1.guess.Clear();
+                progress = 0;
             }
         }
 
