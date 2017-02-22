@@ -141,6 +141,7 @@ namespace SimonGame
                     f.Controls.Add(go);
                 }
             }
+
         }
 
         private void redButton_Click(object sender, EventArgs e)
@@ -169,6 +170,7 @@ namespace SimonGame
                     GameOver go = new GameOver();
                     f.Controls.Add(go);
                 }
+
             }
         }
 
@@ -199,7 +201,6 @@ namespace SimonGame
                     f.Controls.Add(go);
                 }
             }
-
         }
 
         private void yellowButton_Click(object sender, EventArgs e)
