@@ -30,6 +30,7 @@
         {
             this.newGameButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
+            this.TitleLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // newGameButton
@@ -52,16 +53,28 @@
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
+            // TitleLabel
+            // 
+            this.TitleLabel.AutoSize = true;
+            this.TitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TitleLabel.Location = new System.Drawing.Point(70, 219);
+            this.TitleLabel.Name = "TitleLabel";
+            this.TitleLabel.Size = new System.Drawing.Size(170, 31);
+            this.TitleLabel.TabIndex = 2;
+            this.TitleLabel.Text = "Simon Game";
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkKhaki;
+            this.BackColor = System.Drawing.Color.Red;
+            this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.newGameButton);
             this.Name = "MainScreen";
             this.Size = new System.Drawing.Size(300, 300);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -69,5 +82,6 @@
 
         private System.Windows.Forms.Button newGameButton;
         private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Label TitleLabel;
     }
 }

@@ -31,6 +31,7 @@ namespace SimonGame
         {
             InitializeComponent();
 
+            //Changes Screens to Mainscreen
             Form f = this.FindForm();
             f.Controls.Remove(this);
 

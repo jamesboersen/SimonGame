@@ -16,15 +16,21 @@ namespace SimonGame
         public GameOver()
         {
             InitializeComponent();
+
+            //Rounds Played Output and counting rounds
+            Form1.Pattern.Count();
+            roundsPlayedOutput.Text = Convert.ToString(Form1.Pattern.Count());
         }
+
 
         private void endGameButton_Click(object sender, EventArgs e)
         {
+            //When pressing the endgame button, go back to mainscreen
             Form f = this.FindForm();
             f.Controls.Remove(this);
 
             MainScreen ms = new MainScreen();
             f.Controls.Add(ms);
-        }
+        }        
     }
 }
